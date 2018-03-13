@@ -23,10 +23,10 @@
   margin:5px;
 }
 #haha{
-  height:60px;
+  height:8ex;
   width:100%;
   background-color:olive;
-  opacity:0.5;
+  opacity:0;
   position:fixed;
 }
     </style>
@@ -43,19 +43,18 @@ function pp(){//PostProcess
     }
   }
 }
-function haha(){
+function haha(event){
   document.getElementById('haha').style.top=event.clientY+'px';
 }
-function sh(){
+function sh(event){//show/hide
   if(event.ctrlKey){
     var haha=document.getElementById('haha');
-    console.log(haha.style.opacity);
     haha.style.opacity=0.5-haha.style.opacity;
   }
 }
     </script>
   </head>
-  <body onload="pp()" onmousemove='haha()' onclick='sh()'>
+  <body onload="pp()" onmousemove='haha(event)' onclick='sh(event)'>
     <hr id='haha' />
     <div class="volume">
       <div class="section">
